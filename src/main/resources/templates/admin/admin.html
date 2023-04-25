@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Учетка админа</title>
+</head>
+<body>
+<h3>Кабинет администратора</h3>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Выйти</button>
+</form>
+<a th:href="@{/admin/orders}">Перейти к заказам</a>
+<br>
+<a th:href="@{/admin/products}">Перейти к товарам</a>
+<br>
+<a th:href="@{/admin/users}">Перейти к пользователям</a>
+</body>
+</html>
