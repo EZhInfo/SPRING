@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Учетка админа</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-<h3>Кабинет администратора</h3>
-<form th:action="@{/logout}" method="post">
-    <button type="submit">Выйти</button>
-</form>
-<a th:href="@{/admin/orders}">Перейти к заказам</a>
-<br>
-<a th:href="@{/admin/products}">Перейти к товарам</a>
-<br>
-<a th:href="@{/admin/users}">Перейти к пользователям</a>
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand mb-0 h1">Кабинет администратора</span>
+        <a class="btn btn-warning border-dark" role="button" th:href="@{/admin/orders}">Управление заказами</a>
+        <a class="btn btn-warning border-dark" role="button" th:href="@{/admin/products}">Управление товарами</a>
+        <a class="btn btn-warning border-dark" role="button" th:href="@{/admin/users}">Управление пользователями</a>
+        <form th:action="@{/logout}" method="post">
+            <button class="btn btn-warning border-dark" type="submit">Выйти</button>
+        </form>
+    </nav>
+</div>
 </body>
 </html>

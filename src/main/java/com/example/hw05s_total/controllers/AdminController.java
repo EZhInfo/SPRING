@@ -145,13 +145,13 @@ public class AdminController {
         
         productService.saveProduct(product, category_db);
         
-        return "redirect:/admin/admin";
+        return "redirect:/admin/products";
     }
     
     @GetMapping("/admin/product/delete/{id}")
     public String deleteProduct(@PathVariable("id") int id) {
         productService.deleteProduct(id);
-        return "redirect:/admin/admin";
+        return "redirect:/admin/products";
     }
     
     @GetMapping("/admin/product/edit/{id}")
@@ -169,7 +169,7 @@ public class AdminController {
         }
         
         productService.updateProduct(id, product);
-        return "redirect:/admin/admin";
+        return "redirect:/admin/products";
     }
     
     @GetMapping("/admin/orders")

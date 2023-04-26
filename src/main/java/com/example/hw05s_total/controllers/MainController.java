@@ -77,7 +77,7 @@ public class MainController {
     @GetMapping("/person_account/product/info/{id}")
     public String infoProduct(@PathVariable("id") int id, Model model) {
         model.addAttribute("product", productService.getProductId(id));
-        return "/user/infoProduct";
+        return "user/infoProduct";
     }
     
     @PostMapping("/person_account/product/search")
@@ -123,7 +123,7 @@ public class MainController {
         model.addAttribute("value_ot", Ot);
         model.addAttribute("value_do", Do);
         
-        return "/product/product";
+        return "user/person_account";
         
     }
     
@@ -237,7 +237,7 @@ public class MainController {
         
         model.addAttribute("total", total);
         model.addAttribute("orders", orderList);
-        return "/user/orders";
+        return "user/orders";
         
     }
     

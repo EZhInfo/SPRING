@@ -3,19 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Информация о товаре</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-<h3>Информация о товаре</h3>
-<p th:text="'Товар №' + ${product.getId()}"></p>
-<p th:text="'Наименование: ' + ${product.getTitle()}"></p>
-<p th:text="'Описание: ' + ${product.getDescription()}"></p>
-<p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
-<p th:text="'Цена: ' + ${product.getPrice()}"></p>
-<p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
-<p th:text="'Поставщик: ' + ${product.getSeller()}"></p>
-<div th:each="img : ${product.getImagesList()}">
-  <img th:src="'/img/' + ${img.getFileName()}" alt="">
-  <br>
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand mb-0 h1">Информация о товаре</span>
+        <a class="btn btn-warning border-dark" role="button" th:href="@{/product}">Просмотр товаров</a>
+        <!--        <form th:action="@{/person_account}" method="post">-->
+        <!--            <button class="btn btn-primary border-dark" type="submit">Личный кабинет</button>-->
+        <!--        </form>-->
+    </nav>
+    <br>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <p th:text="'Товар №' + ${product.getId()}"></p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.getTitle()}"></h5>
+            <p class="card-text" th:text="'Описание: ' + ${product.getDescription()}"></p>
+            <p class="card-text" th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+            <p class="card-text" th:text="'Цена: ' + ${product.getPrice()}"></p>
+            <p class="card-text" th:text="'Склад: ' + ${product.getWarehouse()}"></p>
+            <p class="card-text" th:text="'Поставщик: ' + ${product.getSeller()}"></p>
+        </div>
+    </div>
+    <br>
+
+    <div th:each="img : ${product.getImagesList()}">
+        <img th:src="'/img/' + ${img.getFileName()}" alt="" width="50%">
+    </div>
+
+    <!--    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
+    <!--        <div class="carousel-indicators">-->
+    <!--            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"-->
+    <!--                    aria-label="Slide 1" class="active" aria-current="true"></button>-->
+    <!--            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"-->
+    <!--                    aria-label="Slide 2"></button>-->
+    <!--            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"-->
+    <!--                    aria-label="Slide 3"></button>-->
+    <!--            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"-->
+    <!--                    aria-label="Slide 4"></button>-->
+    <!--            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"-->
+    <!--                    aria-label="Slide 5"></button>-->
+    <!--        </div>-->
+    <!--        <div class="carousel-inner">-->
+    <!--            <div class="carousel-item active">-->
+    <!--                <div class="carousel-item">-->
+    <!--                    <img th:src="'/img/' + ${product.getImagesList[0].getFileName()}" class="img-fluid d-block w-30" alt="">-->
+    <!--                </div>-->
+    <!--                <div class="carousel-item">-->
+    <!--                    <img th:src="'/img/' + ${product.getImagesList[1].getFileName()}" class="d-block w-30" alt="">-->
+    <!--                </div>-->
+    <!--                <div class="carousel-item">-->
+    <!--                    <img th:src="'/img/' + ${product.getImagesList[2].getFileName()}" class="d-block w-30" alt="">-->
+    <!--                </div>-->
+    <!--                <div class="carousel-item">-->
+    <!--                    <img th:src="'/img/' + ${product.getImagesList[3].getFileName()}" class="d-block w-30" alt="">-->
+    <!--                </div>-->
+    <!--                <div class="carousel-item">-->
+    <!--                    <img th:src="'/img/' + ${product.getImagesList[4].getFileName()}" class="d-block w-30" alt="">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"-->
+    <!--                data-bs-slide="prev">-->
+    <!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+    <!--            <span class="visually-hidden">Предыдущий</span>-->
+    <!--        </button>-->
+    <!--        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"-->
+    <!--                data-bs-slide="next">-->
+    <!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+    <!--            <span class="visually-hidden">Следующий</span>-->
+    <!--        </button>-->
+    <!--    </div>-->
 </div>
 </body>
 </html>
