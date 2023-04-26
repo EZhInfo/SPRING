@@ -34,7 +34,7 @@
                 <td><img th:src="'/img/' + ${product.imagesList[0].getFileName()}" alt="" width="100px"></td>
                 <td class="text-wrap" th:text="${product.getTitle()}"></td>
                 <td class="text-wrap" th:text="${product.getDescription()}"></td>
-                <td th:text="${product.getCategory()}"></td>
+                <td th:text="${product.getCategory().getName()}"></td>
                 <td th:text="${product.getPrice()}"></td>
                 <td th:text="${product.getWarehouse()}"></td>
                 <td th:text="${product.getSeller()}"></td>
