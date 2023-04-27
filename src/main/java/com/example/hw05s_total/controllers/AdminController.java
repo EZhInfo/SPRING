@@ -11,6 +11,7 @@ import com.example.hw05s_total.services.ProductService;
 import com.example.hw05s_total.util.PersonValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.Banner;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -52,6 +53,12 @@ public class AdminController {
     public String admin(Model model) {
         model.addAttribute("products", productService.getAllProduct());
         return "/admin/admin";
+    }
+    
+    @GetMapping("/admin/product/info/{id}")
+    public String product(@PathVariable("id") int id, Model model) {
+        model.addAttribute("product", productService.getProductId(id));
+        return "/admin/infoProduct";
     }
     
     @GetMapping("/admin/product/add")

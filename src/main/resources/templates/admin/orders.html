@@ -47,7 +47,7 @@
                     <td><img
                             th:src="'/img/' + ${order.getProduct().imagesList[0].getFileName()}" alt="" width="100px">
                     </td>
-                    <td class="text-wrap"><a th:href="@{/product/info/{id}(id=${order.getProduct().getId()})}"><p
+                    <td class="text-wrap"><a th:href="@{/admin/product/info/{id}(id=${order.getProduct().getId()})}"><p
                             th:text="${order.getProduct().getTitle()}"></p></a></td>
                     <td th:text="${order.getCount()}"></td>
                     <td th:text="${order.getPrice()}"></td>

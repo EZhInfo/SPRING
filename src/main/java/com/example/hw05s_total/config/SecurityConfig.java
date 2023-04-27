@@ -29,7 +29,7 @@ public class SecurityConfig {
 //                http.csrf().disable() //отключение защиты от межсайтовой подделки запросов - НЕЛЬЗЯ!!!
         http
                 .authorizeHttpRequests() //все страница должны быть авторизироваными
-                .requestMatchers("/admin/**", "/admin/admin", "/admin/orders","/admin/orders/search", "/admin/addProduct", "/admin/editProduct", "/admin/users", "/admin/editUsers", "/admin/products", "/admin/users/delete/{id}").hasRole(Role.ADMIN.name())
+                .requestMatchers("/admin/**", "/admin/admin", "/admin/orders","/admin/orders/search", "/admin/addProduct", "/admin/editProduct", "/admin/users", "/admin/editUsers", "/admin/products", "/admin/users/delete/{id}", "/admin/infoProduct").hasRole(Role.ADMIN.name())
                 //                .anyRequest().authenticated() //для всех остальных страниц вызывается метод authenticated()
                 .requestMatchers("/authentication", "/registration", "/error", "/resources/**", "/static/**", "/css/**", "/js/**", "/img/**", "/product/**", "/product/info/{id}", "/product/search").permitAll() // страницы доступные для всех, permitAll() - для неавторизированых тоже, сюда же добавлять и статику 1:29:15 №18; доступ на файлы без дочерних
                 .anyRequest().hasAnyRole(Role.USER.name(), Role.ADMIN.name())

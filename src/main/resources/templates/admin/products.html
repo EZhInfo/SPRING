@@ -32,7 +32,7 @@
             <tr>
                 <th scope="row" th:text="${product.getId()}"></th>
                 <td><img th:src="'/img/' + ${product.imagesList[0].getFileName()}" alt="" width="100px"></td>
-                <td class="text-wrap" th:text="${product.getTitle()}"></td>
+                <td class="text-wrap"><a th:href="@{/admin/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a></td>
                 <td class="text-wrap" th:text="${product.getDescription()}"></td>
                 <td th:text="${product.getCategory().getName()}"></td>
                 <td th:text="${product.getPrice()}"></td>
